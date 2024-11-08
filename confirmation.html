@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de Commande | L'Art du Parfum</title>
+    <link rel="stylesheet" href="CSS"> <!-- Lien vers votre fichier CSS -->
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>L'Art du Parfum</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="panier.html">Panier</a></li>
+                    <li><a href="confirmation.html">Confirmation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="confirmation">
+            <h2>Confirmation de votre Commande</h2>
+            <div class="client-info">
+                <h3>Informations du Client</h3>
+                <p><strong>Nom : </strong><span id="client-nom"></span></p>
+                <p><strong>Adresse : </strong><span id="client-adresse"></span></p>
+                <p><strong>Téléphone : </strong><span id="client-telephone"></span></p>
+            </div>
+
+            <div class="order-summary">
+                <h3>Récapitulatif de votre commande</h3>
+                <ul id="commande-panier"></ul>
+                <p><strong>Total : </strong><span id="commande-total">0</span> DA</p>
+            </div>
+
+            <div class="thank-you">
+                <p>Merci pour votre achat ! Nous traiterons votre commande dans les plus brefs délais.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 L'Art du Parfum - Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Récupération des données depuis localStorage
+        const panier = JSON.parse(localStorage.getItem("panier")) || [];
+        const total = localStorage.getItem("total") || 0;
+        const clientNom = localStorage.getItem("clientNom") || "Non renseigné";
+        const clientAdresse = localStorage.getItem("clientAdresse") || "Non renseignée";
+        const clientTelephone = localStorage.getItem("clientTelephone") || "Non renseigné";
+
+        // Affichage des informations du client
+        document.getElementById("client-nom").textContent = clientNom;
+        document.getElementById("client-adresse").textContent = clientAdresse;
+        document.getElementById("client-telephone").textContent = clientTelephone;
+
+        // Affichage des produits dans le panier
+        const commandePanier = document.getElementById("commande-panier");
+        panier.forEach(produit => {
+            const item = document.createElement("li");
+            item.textContent = `${produit.nom} - ${produit.prix} DA`;
+            commandePanier.appendChild(item);
+        });
+
+        // Affichage du total de la commande
+        document.getElementById("commande-total").textContent = total + " DA";
+    </script>
+</body>
+</html>

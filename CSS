@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f9;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 1em;
+    text-decoration: none;
+}
+
+section {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #444;
+    margin-bottom: 0.5em;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+    margin-top: 2em;
+}
+
+/* Styles des produits */
+.produit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 1em 0;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.produit img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.produit p {
+    margin: 0.5em 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.produit button {
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.produit button:hover {
+    background-color: #555;
+}
+
+/* Styles du panier */
+#panier {
+    margin-top: 2em;
+}
+
+#panier h2 {
+    margin-bottom: 1em;
+}
+
+#liste-panier {
+    list-style: none;
+    padding: 0;
+}
+
+#liste-panier li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 1em;
+    color: #666;
+}
+
+#total-panier {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#panier button {
+    padding: 0.7em 1.5em;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    background-color: #d9534f;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+#panier button:hover {
+    background-color: #c9302c;
+}
+
+/* Styles du formulaire d'informations client */
+#form-client {
+    margin-top: 1.5em;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+#form-client label {
+    font-weight: bold;
+    margin-top: 0.5em;
+    display: block;
+}
+
+#form-client input {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#form-client input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+/* Styles de la page de confirmation */
+#commande-panier {
+    list-style: none;
+    padding: 0;
+}
+
+#commande-panier li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#commande-total {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Art du Parfum</title>
+    <link rel="stylesheet" href="CSS">
+</head>
+<body>
+    <header>
+        <h1>L'Art du Parfum</h1>
+        <nav>
+            <a href="#produits">Produits</a>
+            <a href="#panier" id="panier-link">Mon Panier (0)</a>
+        </nav>
+    </header>
+
+    <section id="produits">
+        <h2>Nos Parfums</h2>
+        <div class="produit">
+            <img src="parfum1.jpg" alt="Parfum 1">
+            <p>Parfum Floral - 5000 DA</p>
+            <button onclick="ajouterAuPanier('Parfum Floral', 5000)">Ajouter au Panier</button>
+        </div>
+        <div class="produit">
+            <img src="parfum2.jpg" alt="Parfum 2">
+            <p>Parfum Boisé - 6500 DA</p>
+            <button onclick="ajouterAuPanier('Parfum Boisé', 6500)">Ajouter au Panier</button>
+        </div>
+        <div class="produit">
+            <img src="parfum3.jpg" alt="Parfum 3">
+            <p>Parfum Oriental - 8000 DA</p>
+            <button onclick="ajouterAuPanier('Parfum Oriental', 8000)">Ajouter au Panier</button>
+        </div>
+    </section>
+
+    <section id="panier">
+        <h2>Mon Panier</h2>
+        <ul id="liste-panier"></ul>
+        <p>Total : <span id="total-panier">0</span> DA</p>
+        <button onclick="passerCommande()">Passer la commande</button>
+
+        <!-- Formulaire d'informations du client -->
+        <h3>Informations du client</h3>
+       
+        <form action="https://formspree.io/f/xpwzdyvo" method="POST" onsubmit="return validerEtEnvoyerCommande()">
+            <label for="nom">Nom complet :</label>
+            <input type="text" id="nom" name="nom" required>
+        
+            <label for="adresse">Adresse :</label>
+            <input type="text" id="adresse" name="adresse" required>
+        
+            <label for="telephone">Téléphone :</label>
+            <input type="text" id="telephone" name="telephone" required>
+        
+            <!-- Champ caché pour le total de la commande -->
+            <input type="hidden" id="total" name="total">
+        
+            <!-- Champ caché pour la liste des articles -->
+            <input type="hidden" id="articles" name="articles">
+        
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 L'Art du Parfum</p>
+    </footer>
+
+    <script src="js"></script>
+</body>
+</html>
